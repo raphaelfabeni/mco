@@ -1,0 +1,108 @@
+:root {
+  --navy: #142454;
+  --ink: #1d2558;
+  --cream: #fff9ed;
+  --gold: #f5d990;
+  --rose: #a86e70;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--cream); }
+body { margin: 0; color: var(--ink); font-family: "DM Sans", Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin-top: 0; }
+
+.invitation-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 36px 24px 64px;
+  background: radial-gradient(circle at 50% 0%, #fffef9 0 20%, transparent 50%), linear-gradient(145deg, #f8dce0, #ffe8d9 48%, #f5d5d8);
+}
+
+.invitation-page::before, .invitation-page::after {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  content: "";
+}
+.invitation-page::before { top: -420px; left: -200px; }
+.invitation-page::after { right: -160px; bottom: -500px; width: 700px; height: 700px; }
+
+.invitation-card {
+  position: relative;
+  z-index: 1;
+  width: min(650px, 100%);
+  padding: clamp(42px, 8vw, 78px) clamp(25px, 7vw, 76px);
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 32px;
+  background: rgba(255, 252, 247, .68);
+  box-shadow: 0 24px 80px rgba(132, 77, 93, .14);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.eyebrow { margin-bottom: 14px; color: var(--rose); font-size: 14px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.gift { margin-bottom: 14px; font-size: 49px; line-height: 1; }
+.invitation-card h1, .hero h1, h2 { font-family: "Playfair Display", Georgia, serif; }
+.invitation-card h1 { margin-bottom: 21px; font-size: clamp(40px, 7vw, 67px); font-weight: 600; line-height: .99; letter-spacing: -.045em; }
+.intro { max-width: 410px; margin: 0 auto 31px; color: #685e70; font-size: 17px; line-height: 1.55; }
+.button { display: inline-flex; align-items: center; gap: 15px; padding: 16px 23px; border-radius: 999px; background: var(--ink); color: #fffaf4; font-size: 14px; font-weight: 700; box-shadow: 0 10px 20px rgba(29, 37, 88, .19); }
+.button:hover { transform: translateY(-3px); }
+.button span { font-size: 20px; line-height: 0; }
+.footer-note { position: fixed; bottom: 22px; z-index: 1; margin: 0; color: #94636c; font-family: "Playfair Display", Georgia, serif; font-size: 18px; font-style: italic; }
+.sparkle { position: fixed; z-index: 1; color: #d89d59; font-size: clamp(20px, 4vw, 38px); }
+.sparkle-left { top: 23%; left: 11%; }.sparkle-right { top: 18%; right: 12%; }
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 92px 25px 120px;
+  color: #fffdf5;
+  text-align: center;
+  background: var(--navy);
+}
+
+.hero-video {
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 177.78svh);
+  height: max(56.25vw, 100svh);
+  border: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.hero-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(11, 22, 64, .72), rgba(21, 35, 83, .35) 42%, rgba(32, 18, 54, .82)); }
+.stars { position: absolute; top: 16%; z-index: 0; color: #ffe69f; font-size: clamp(20px, 3vw, 38px); letter-spacing: 1vw; opacity: .9; }
+.back-link { position: absolute; top: 25px; left: max(25px, calc((100% - 1080px) / 2)); font-size: 16px; font-weight: 600; }
+.hero-content { position: relative; z-index: 1; }
+.light { color: var(--gold); }
+.hero h1 { margin: 0; font-size: clamp(47px, 8vw, 78px); font-weight: 600; line-height: .96; letter-spacing: -.055em; text-shadow: 0 3px 24px rgba(18, 21, 68, .5); }
+.hero h1 em { color: var(--gold); font-weight: inherit; }
+.trip-date { margin: 25px 0 18px; color: #fff6d1; font-size: 16px; font-weight: 700; letter-spacing: .2em; }
+.hero-copy { max-width: 510px; margin: 0 auto; font-size: 18px; line-height: 1.6; }
+.destination { display: inline-block; margin: 29px 0 0; padding: 12px 19px; border: 1px solid rgba(255, 255, 255, .45); border-radius: 100px; background: rgba(17, 25, 67, .38); font-size: 15px; font-weight: 600; backdrop-filter: blur(5px); }
+.scroll-cue { position: absolute; z-index: 1; bottom: 20px; display: grid; gap: 4px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }.scroll-cue span { font-size: 24px; }
+
+.itinerary { width: min(850px, 100%); margin: 0 auto; padding: clamp(60px, 10vw, 100px) 25px 80px; }
+.section-heading { text-align: center; }.section-heading h2 { margin-bottom: 50px; font-size: clamp(34px, 5vw, 51px); font-weight: 600; line-height: 1; letter-spacing: -.045em; }
+.schedule { display: grid; gap: 15px; max-width: 710px; margin: 0 auto; padding: 0; list-style: none; }
+.schedule li { display: grid; grid-template-columns: 74px 1fr; gap: 18px; align-items: center; padding: 18px 20px; border: 1px solid #f0dec0; border-radius: 20px; background: #fffdf8; box-shadow: 0 9px 24px rgba(83, 62, 54, .06); }
+.schedule time { padding: 11px 5px; border-radius: 14px; background: #f9e1bd; color: #a8736f; text-align: center; text-transform: uppercase; }.schedule time strong { display: block; font-family: "Playfair Display", Georgia, serif; font-size: 36px; line-height: .8; }.schedule time span { font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+.schedule h3 { margin: 0 0 6px; color: #283263; font-size: 20px; }.schedule p { margin: 0; color: #716b78; font-size: 16px; line-height: 1.5; }
+.closing { margin: 30px 0 0; color: #aa7471; font-family: "Playfair Display", Georgia, serif; font-size: 23px; font-style: italic; text-align: center; }
+
+@media (max-width: 520px) {
+  .invitation-card { border-radius: 25px; }.intro { font-size: 15px; }.back-link { top: 20px; left: 18px; font-size: 14px; }.hero { min-height: 680px; }.hero-copy { font-size: 17px; }.itinerary { padding-right: 18px; padding-left: 18px; }.schedule li { grid-template-columns: 65px 1fr; gap: 14px; padding: 16px 14px; }.schedule time strong { font-size: 31px; }.schedule h3 { font-size: 18px; }.schedule p { font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.button:hover { transform: none; } }
